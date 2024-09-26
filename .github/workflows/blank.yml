@@ -16,8 +16,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21.0.2'
-  
-          distribution: 'temurin'
+          distribution: 'microsoft'  
 
       - name: Compile project
         run: mvn compile  
@@ -32,7 +31,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '21.0.2'  
+          java-version: '21.0.2'
+          distribution: 'microsoft'  
 
       - name: Run tests
         run: mvn verify  
