@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador de Tareas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    #menu, #taskForm, #completeTaskForm, #deleteTaskForm {
+      background-color: #a54141;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    #menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select, input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    button {
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    #taskList {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Administrador de Tareas</h1>
+
+  <div id="menu">
+    <label for="actionSelect">Selecciona una acción:</label>
+    <select id="actionSelect">
+      <option value="addTask">Agregar tarea</option>
+      <option value="viewTasks">Ver listado de tareas</option>
+      <option value="completeTask">Marcar tarea como completada</option>
+      <option value="deleteTask">Eliminar tarea</option>
+    </select>
+    <button onclick="selectAction()">Aceptar</button>
+  </div>
+
+  <form id="taskForm" style="display: none;">
+    <input type="text" id="newTask" placeholder="Agregar nueva tarea" required>
+    <button type="button" onclick="addTask()">Agregar</button>
+  </form>
+
+  <table id="taskTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="taskList"></tbody>
+  </table>
+
+  <form id="completeTaskForm" style="display: none;">
+    <input type="text" id="taskIdComplete" placeholder="ID de la tarea" required>
+    <button type="button" onclick="completeTask()">Marcar como completada</button>
+  </form>
+
+  <form id="deleteTaskForm" style="display: none;">
+    <input type="text" id="taskIdDelete" placeholder="ID de la tarea" required>
+    <button type="button" onclick="deleteTask()">Eliminar tarea</button>
+  </form>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
