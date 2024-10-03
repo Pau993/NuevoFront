@@ -43,7 +43,7 @@ Mensajes de Alerta
 La aplicación proporciona mensajes de alerta para asegurar entradas válidas y confirmar acciones.
 
 Andres Felipe Rodriguez Chaparro
-Santiago Penagos
+Santiago Guerra Penagos
 Paula Natalia Paez Vega
 Marco Antonio Alvarez 
 Manuela Felipe Barrera Barrera
